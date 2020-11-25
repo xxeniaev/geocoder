@@ -12,7 +12,13 @@ class Address:
         self._house = ''
         self.dict_cities = CitiesLoader("test.txt").load()
 
-    def set_address(self, address_list: list):
+    def set_address(self, address_string: str):
+        # надо в дальнейшем учитывать, что в адресе могут фигурировать
+        # запятые, а также слова
+        # "дом/д/д.", "улица/ул/ул./проспект", "город/г/г."
+        # сделать английскую адаптацию
+        address_list = address_string.split()
+
         # city
         # надо в дальнейшем учитывать, что может быть 2 слова в названии города
         for i in address_list:
@@ -31,11 +37,6 @@ class Address:
 
         # street
         self._street = ' '.join(address_list)
-
-        # надо в дальнейшем учитывать, что в адресе могут фигурировать
-        # запятые, а также слова
-        # "дом/д/д.", "улица/ул/ул./проспект", "город/г/г."
-        # сделать английскую адаптацию
 
     def get_address(self):
         return self._city, self._street, self._house
