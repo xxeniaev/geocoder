@@ -10,9 +10,10 @@ class Address:
         self._city = ''
         self._street = ''
         self._house = ''
-        self.dict_cities = CitiesLoader("test.txt").load()
 
     def set_address(self, address_string: str):
+        cities = CitiesLoader("test.txt").cities
+
         # надо в дальнейшем учитывать, что в адресе могут фигурировать
         # запятые, а также слова
         # "дом/д/д.", "улица/ул/ул./проспект", "город/г/г."
@@ -22,7 +23,7 @@ class Address:
         # city
         # надо в дальнейшем учитывать, что может быть 2слова в названии города
         for i in address_list:
-            if i in self.dict_cities:
+            if i in cities:
                 self._city = i
                 address_list.remove(self._city)
 

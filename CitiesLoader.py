@@ -6,6 +6,7 @@ class CitiesLoader:
     def __init__(self, file_name):
         super().__init__()
         self._file_name = file_name
+        self.cities = self.load()
 
     def load(self):
         try:
