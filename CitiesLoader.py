@@ -10,7 +10,8 @@ class CitiesLoader:
     def load(self):
         try:
             with open(self._file_name) as f:
-                contents = codecs.decode(codecs.encode(f.read(), 'cp1251'), 'utf8')
+                contents = codecs.decode(codecs.encode(f.read(),
+                                                       'cp1251'), 'utf8')
         except TypeError:
             print('please, choose language or file for creating '
                   'your own dictionary')

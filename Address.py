@@ -20,7 +20,7 @@ class Address:
         address_list = address_string.split()
 
         # city
-        # надо в дальнейшем учитывать, что может быть 2 слова в названии города
+        # надо в дальнейшем учитывать, что может быть 2слова в названии города
         for i in address_list:
             if i in self.dict_cities:
                 self._city = i
