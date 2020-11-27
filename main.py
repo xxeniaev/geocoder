@@ -1,11 +1,11 @@
-from Address import Address
-from DataBaseLoader import DataBase
+from address import Address
+from data_base_loader import DataBase
 
 
 def main():
     entrance = input('Ввод:\n')  # строка ввода данных
-    address = Address()  # создаётся экземпляр класса Адрес
-    address.set_address(entrance)  # задаются параметры адреса
+    address = Address(entrance)  # создаётся экземпляр класса Адрес
+    print(address.get_address())  # задаются параметры адреса
 
     data_base = DataBase('db.xml',
                          'https://overpass-api.de/api/map?bbox='

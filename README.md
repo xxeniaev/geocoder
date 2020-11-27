@@ -4,18 +4,23 @@ program that takes free-form address and gives coordinates and full address
 ### Requirements
 * `tqdm` (installing by pip)
 ## Usage
-### Launch
-...
+you just need to enter address below
 ## Modules
 * `main.py` launching
-* `GeoCoder.py` geocoding
-* `CitiesLoader.py` loading cities into list for parsing address
-* `Address.py` parsing address
-* `DataBaseLoader.py` loading OSM data base on disk
+* `geocoder.py` geocoding
+* `citiesloader.py` loading cities into list for parsing address
+* `address.py` parsing address
+* `data_base_loader.py` loading OSM data base on disk
 * `test_geocoder.py` testing program
 ## Future versions
 - [ ] оптимальный поиск по бд
 - [ ] усовершенствовать парсинг адреса
 - [ ] выводить json
+- [ ] усовершенствовать README.md
+- [ ] предусмотреть возможность стартовать поиск по базе, 
+которая была скачана ранее, а не скачивать каждый раз заново 
+при попытке что-то поискать
+- [ ] исравить тесты
+- [ ] исправить загрузку городов
 ## Authors
 * **Xenia Evdokimova** ([xxeniaev](https://github.com/xxeniaev))

@@ -1,30 +1,31 @@
 import re
 
-from CitiesLoader import CitiesLoader
+from cities_loader import CitiesLoader
 
 
 class Address:
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, address_string: str):
+        self.address_string = address_string
         self._city = ''
         self._street = ''
         self._house = ''
+        self.parse_address()
 
-    def set_address(self, address_string: str):
+    def parse_address(self):
         cities = CitiesLoader("test.txt").cities
 
         # надо в дальнейшем учитывать, что в адресе могут фигурировать
         # запятые, а также слова
         # "дом/д/д.", "улица/ул/ул./проспект", "город/г/г."
         # сделать английскую адаптацию
-        address_list = address_string.split()
+        address_list = self.address_string.split()
 
         # city
         # надо в дальнейшем учитывать, что может быть 2слова в названии города
-        for i in address_list:
-            if i in cities:
-                self._city = i
+        for element in address_list:
+            if element in cities:
+                self._city = element
                 address_list.remove(self._city)
 
         # house

@@ -1,18 +1,17 @@
 import os
 import unittest
-from Address import Address
-from DataBaseLoader import DataBase
-from CitiesLoader import CitiesLoader
+from address import Address
+from data_base_loader import DataBase
+from cities_loader import CitiesLoader
 
 
 class SpellcheckerTest(unittest.TestCase):
     def test_set_address(self):
-        address = Address()
-
-        address.set_address('Екатеринбург Тургенева 4')
+        address = Address('Екатеринбург Тургенева 4')
         self.assertEqual(address.get_address(),
                          ('Екатеринбург', 'Тургенева', '4'))
-        address.set_address('Тургенева 4 Екатеринбург')
+
+        address = Address('Тургенева 4 Екатеринбург')
         self.assertEqual(address.get_address(),
                          ('Екатеринбург', 'Тургенева', '4'))
 

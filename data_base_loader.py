@@ -5,7 +5,6 @@ import os
 
 class DataBase:
     def __init__(self, db_file_path, db_url, force):
-        super().__init__()
         self.db_file_path = db_file_path
         self.db_url = db_url
         if force or not self.check_xml():
@@ -28,4 +27,4 @@ class DataBase:
                 file.write(data)
         progress_bar.close()
         if total_size_in_bytes != 0 and progress_bar.n != total_size_in_bytes:
-            print("ERROR, something went wrong")
+            print("Error, something went wrong")
